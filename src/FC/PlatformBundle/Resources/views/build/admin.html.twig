@@ -1,0 +1,96 @@
+{% extends "FCPlatformBundle::layout.html.twig" %}
+
+{% block FCPlatform_body %}
+
+    {% if is_granted('ROLE_ADMIN') %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Admin</h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('fc_platform_homepage') }}">Home</a>
+                    </li>
+                    <li class="active">Admin</li>
+                </ol>
+            </div>
+        </div>
+        <hr>
+        <h4>Gods :</h4>
+        <hr>
+
+        <a class="btn btn-primary" href="{{ path('fc_platform_admineditgod') }}">Add new god</a>
+        <p class="help-block"></p>
+
+        <hr>
+        <h4>Builds :</h4>
+        <hr>
+
+        <a class="btn btn-primary" href="{{ path('fc_platform_adminlistbuild') }}">Delete a build</a>
+        <p class="help-block"></p>
+
+
+        <hr>
+        <h4>Items :</h4>
+        <hr>
+
+        <a class="btn btn-primary" href="{{ path('fc_platform_additem') }}">Ajouter un nouvel item</a>
+        <p class="help-block"></p>
+
+
+
+        <hr>
+        <h4>Users :</h4>
+        <hr>
+
+
+    {% for user in users %}
+        <div class="well">
+            <div class="media">
+                <h4 class="media-heading" style="float:left"><a href="{{ path('fc_platform_user', {'id': user.id}) }}">{{ user.username }}</a>
+                </h4>
+                <div style="float:right">
+                    <a class="btn btn-primary" href="{{ path('fc_platform_adminedituser', {'id': user.id}) }}">Desactiver</i></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+        {% if nbPages > 1 %}
+            <ul class="pagination">
+
+                {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+
+                {% for p in range(1, nbPages) %}
+
+                    <li{% if p == page %} class="active"{% endif %}>
+
+                        <a href="{{ path('fc_platform_admin', {'page': p}) }}">{{ p }}</a>
+
+                    </li>
+
+                {% endfor %}
+
+            </ul>
+        {% endif %}
+
+
+
+
+
+        <hr>
+        <!-- Footer -->
+        <footer style="margin:5px">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; SmiteBuild 2016</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+        {% endif%}
+{% endblock %}

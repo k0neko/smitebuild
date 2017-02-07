@@ -1,0 +1,66 @@
+{% extends "FCUserBundle::layout.html.twig" %}
+
+{% block FCUser_body %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Login</h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('fc_platform_homepage') }}">Home</a>
+                    </li>
+                    <li class="active">Login</li>
+                </ol>
+            </div>
+        </div>
+
+
+        {# S'il y a une erreur, on l'affiche dans un joli cadre #}
+        {% if error %}
+            <div class="alert alert-danger">{{ error.message }}</div>
+        {% endif %}
+
+        <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+        <div class="row">
+            <div style="margin:auto;width:500px">
+
+                <form action="{{ path('fos_user_security_check') }}" method="post">
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label for="username">Pseudo :</label>
+                            <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" required data-validation-required-message="Please enter your pseudo.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" class="form-control" name="_password" required data-validation-required-message="Please enter your password.">
+                        </div>
+                    </div>
+
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    <button type="submit" value="Login" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+
+        <hr>
+        <!-- Footer -->
+        <footer style="margin:5px">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; SmiteBuild 2016</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+{% endblock %}

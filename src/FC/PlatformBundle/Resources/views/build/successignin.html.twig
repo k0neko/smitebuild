@@ -1,0 +1,29 @@
+{% extends "FCPlatformBundle::layout.html.twig" %}
+
+{% block FCPlatform_body %}
+    <!-- Page Content -->
+    <div class="container">
+
+     <h1>You are well registered !</h1>
+
+        <a href="{{ path('fc_platform_homepage') }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Return home        </a>
+        <a href="{{ path('fos_user_security_login') }}" class="btn btn-default"> Login</a>
+
+
+        <!-- /.row -->
+
+
+        <hr>
+        <!-- Footer -->
+        <footer style="margin:5px">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; SmiteBuild 2016</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+{% endblock %}

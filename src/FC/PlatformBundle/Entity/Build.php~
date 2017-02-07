@@ -1,0 +1,85 @@
+<?php
+
+namespace FC\PlatformBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Build
+ *
+ * @ORM\Table(name="build")
+ * @ORM\Entity(repositoryClass="FC\PlatformBundle\Repository\BuildRepository")
+ */
+class Build
+{
+    /**
+
+     * @ORM\OneToOne(targetEntity="OC\PlatformBundle\Entity\Image", cascade={"persist"})
+
+     */
+
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+
+
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="FC\PlatformBundle\Entity\Build")
+     */
+    private $god;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="build_name", type="string", length=255)
+     */
+    private $buildName;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="FC\PlatformBundle\Entity\Item")
+     */
+    private $item1;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="FC\PlatformBundle\Entity\Item")
+     */
+    private $item2;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="FC\PlatformBundle\Entity\Item")
+     */
+    private $item3;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="FC\PlatformBundle\Entity\Item")
+     */
+    private $item4;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="FC\PlatformBundle\Entity\Item")
+     */
+    private $item5;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="FC\PlatformBundle\Entity\Item")
+     */
+    private $item6;
+    /**
+     * @ORM\ManyToOne(targetEntity="FC\PlatformBundle\Entity\User")
+     */
+    private $user;
+
+
+
+    
+
+}
+
+

@@ -1,0 +1,103 @@
+{% extends "FCPlatformBundle::layout.html.twig" %}
+
+{% block FCPlatform_body %}
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Build page</h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('fc_platform_homepage') }}">Home</a>
+                    </li>
+                    <li><a href="{{ path('fc_platform_build') }}">Build</a>
+                    </li>
+                    <li>{{ build.buildName }}</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div style="float:right">
+          <h3>{{ votes | length }} vote{% if votes|length > 1 %}s{% endif %}</h3>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") and app.user != build.user %}
+        <a class="btn btn-primary" href="{{ path('fc_platform_vote', {'id':build.id}) }}">Vote</a>
+            {% endif %}
+        <p class="help-block"></p>
+        </div>
+    <div style="clear:both"></div>
+
+        <div class="well">
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img src="{{ asset(build.god.image.webpath) }}" alt="{{ build.god.image.alt }}" />
+                </a>
+
+                <h4 class="media-heading"><a href="#">{{ build.buildName }}</a>
+                </h4>
+                <small>By {{ build.user }}</small>
+                <p class="help-block"></p>
+
+
+            </div>
+        </div>
+
+        <h2>Items :</h2>
+        <div class="row" style="margin:0">
+            <!--ITEM 1-->
+            <div class="col-md-6 img-portfolio well" style="width:550px;margin-right:30px">
+                <h5>{{ build.item1.name }}</h5>
+
+            </div>
+
+            <!--ITEM 2-->
+            <div class="col-md-6 img-portfolio well" style="width:550px">
+                <h5>{{ build.item2.name }}</h5>
+
+            </div>
+
+            <!--ITEM 3-->
+            <div class="col-md-5 img-portfolio well"  style="width:550px;margin-right:30px">
+                <h5>{{ build.item3.name }}</h5>
+
+            </div>
+
+            <!--ITEM 4-->
+            <div class="col-md-5 img-portfolio well" style="width:550px">
+                <h5>{{ build.item4.name }}</h5>
+
+            </div>
+
+            <!--ITEM 5-->
+            <div class="col-md-5 img-portfolio well" style="width:550px;margin-right:30px">
+                <h5>{{ build.item5.name }}</h5>
+
+            </div>
+
+            <!--ITEM 6-->
+            <div class="col-md-5 img-portfolio well" style="width:550px">
+                <h5>{{ build.item6.name }}</h5>
+
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+        <hr>
+        <!-- Footer -->
+        <footer style="margin:5px">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; SmiteBuild 2016</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+{% endblock %}

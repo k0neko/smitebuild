@@ -1,0 +1,77 @@
+fc_platform_homepage:
+    path:     /
+    defaults: { _controller: FCPlatformBundle:build:index }
+
+fc_platform_build:
+    path:     /build/p/{page}
+    defaults:
+        _controller: FCPlatformBundle:build:build
+        page: 1
+
+fc_platform_successignin:
+    path:     /successignin
+    defaults: { _controller: FCPlatformBundle:build:successignin }
+
+
+
+fc_platform_addbuild:
+    path:     /build/add
+    defaults: { _controller: FCPlatformBundle:build:addbuild }
+
+fc_platform_search:
+    path:     /search/
+    defaults: { _controller: FCPlatformBundle:build:search }
+
+fc_platform_adduser:
+    path:     /user/add
+    defaults: { _controller: FCPlatformBundle:build:adduser }
+
+fc_platform_admin:
+    path:     /admin/p/{page}
+    defaults:
+        _controller: FCPlatformBundle:build:admin
+        page: 1
+
+fc_platform_buildpage:
+    path:     /build/{id}
+    defaults: { _controller: FCPlatformBundle:build:buildpage }
+
+fc_platform_buildsubmission:
+    path:     /build/submission
+    defaults: { _controller: FCPlatformBundle:build:buildsubmission }
+
+fc_platform_editprofil:
+    path:     /user/edit/{id}
+    defaults: { _controller: FCPlatformBundle:build:editprofil }
+
+fc_platform_adminedituser:
+    path:     /admin/user/edit/{id}
+    defaults: { _controller: FCPlatformBundle:build:edituser }
+
+
+fc_platform_admineditgod:
+    path:     /admin/god/edit/
+    defaults: { _controller: FCPlatformBundle:build:editgod }
+
+
+fc_platform_vote:
+    path:     /vote/{id}
+    defaults: { _controller: FCPlatformBundle:build:vote }
+
+fc_platform_adminlistbuild:
+    path:     /admin/listbuild/
+    defaults: { _controller: FCPlatformBundle:build:listbuild }
+
+
+fc_platform_admindeletebuild:
+    path:     /admin/build/deletebuild/{id}
+    defaults: { _controller: FCPlatformBundle:build:deletebuild }
+
+fc_platform_publicprofil:
+    path:     /publicprofil/{id}
+    defaults: { _controller: FCPlatformBundle:build:publicprofil }
+
+fc_platform_additem:
+    path:     /admin/additem/
+    defaults: { _controller: FCPlatformBundle:build:additem }
+
